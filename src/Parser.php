@@ -182,6 +182,8 @@ function parse_file( $path, $exporter) : int {
   echo "Parsing file ", $finfo->getPathname(), PHP_EOL;
 
   try {
+      # add php-ast here
+    require_once './php-ast-1.0.5/ast_stub.php';
     $ast = ast\parse_file( $path, $version = 30);
 
     // The above may throw a ParseError. We only export to the output
