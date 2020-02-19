@@ -183,9 +183,8 @@ function parse_file( $path, $exporter) : int {
 
   try {
       # add php-ast here
-    require_once './php-ast-1.0.5/ast_stub.php';
-    $ast = ast\parse_file( $path, $version = 30);
-
+      #require_once './php-ast-1.0.5/ast_stub.php';
+      $ast=ast\parse_file( $path, $version = 50);
     // The above may throw a ParseError. We only export to the output
     // file(s) if that didn't happen.
     $fnode = $exporter->store_filenode( $finfo->getFilename());

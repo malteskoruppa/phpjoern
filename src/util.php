@@ -130,6 +130,7 @@ function get_flag_info() : array {
             flags\BINARY_IS_GREATER_OR_EQUAL => 'BINARY_IS_GREATER_OR_EQUAL',
             flags\BINARY_SPACESHIP => 'BINARY_SPACESHIP',
         ],
+/*
         ast\AST_ASSIGN_OP => $sharedBinaryOps + [
             // Old version 10 flags
             flags\ASSIGN_BITWISE_OR => 'ASSIGN_BITWISE_OR',
@@ -145,6 +146,7 @@ function get_flag_info() : array {
             flags\ASSIGN_SHIFT_LEFT => 'ASSIGN_SHIFT_LEFT',
             flags\ASSIGN_SHIFT_RIGHT => 'ASSIGN_SHIFT_RIGHT',
         ],
+*/
         ast\AST_MAGIC_CONST => [
             flags\MAGIC_LINE => 'MAGIC_LINE',
             flags\MAGIC_FILE => 'MAGIC_FILE',
