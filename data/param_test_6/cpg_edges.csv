@@ -1,0 +1,7 @@
+start	end	type	var
+2	5	FLOWS_TO	
+5	12	FLOWS_TO	
+12	19	FLOWS_TO	
+19	3	FLOWS_TO	
+5	19	REACHES	a
+12	19	REACHES	b

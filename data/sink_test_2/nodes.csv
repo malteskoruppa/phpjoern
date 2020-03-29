@@ -1,0 +1,17 @@
+id:int	labels:label	type	flags:string_array	lineno:int	code	childnum:int	funcid:int	classname	namespace	endlineno:int	name	doccomment
+0	Filesystem	File									"echo_test_2.php"	
+1	AST	AST_TOPLEVEL	TOPLEVEL_FILE	1					""	6	"/root/phpjoern/testCode/echo_test_2.php"	
+2	Artificial	CFG_FUNC_ENTRY					1				"/root/phpjoern/testCode/echo_test_2.php"	
+3	Artificial	CFG_FUNC_EXIT					1				"/root/phpjoern/testCode/echo_test_2.php"	
+4	AST	AST_STMT_LIST		1		0	1		""			
+5	AST	AST_FUNC_DECL		2		0	1		""	4	foo	
+6	Artificial	CFG_FUNC_ENTRY					5		""		"foo"	
+7	Artificial	CFG_FUNC_EXIT					5		""		"foo"	
+8	AST	AST_PARAM_LIST		2		0	5		""			
+9	AST	NULL		2		1	5		""			
+10	AST	AST_STMT_LIST		2		2	5		""			
+11	AST	AST_ECHO		3		0	5		""			
+12	AST	integer		3	123	0	5		""			
+13	AST	NULL		2		3	5		""			
+14	AST	AST_ECHO		5		1	1		""			
+15	AST	integer		5	321	0	1		""			

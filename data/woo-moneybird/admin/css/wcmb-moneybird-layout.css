@@ -1,0 +1,15 @@
+/* inputbox width */ 
+.wcmb_clientIdWidth, .wcmb_clientSecretWidth, .wcmb_resetWidth {
+	width: 60%;
+}
+/* reset button margin*/
+#wcmb_reset{
+	margin-left: 15px;
+}
+.submit button.wcmb_resetButtonDisable {
+    display: none;
+}
+/* selectbox width */
+.wcmb_workflowWidth, .wcmb_invoiceLayoutWidth {
+	 width: 30%;
+}
