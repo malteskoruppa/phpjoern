@@ -1,3 +1,10 @@
+# Archived - no longer maintained
+
+Please note that this project is no longer being maintained.
+It is only kept here for historical purposes.
+
+# Installation and usage
+
 This is the phpjoern utility for Joern. It uses the `php-ast` extension
 to generate ASTs from PHP projects and exports these to CSV files
 suitable to be parsed by Joern.
@@ -6,7 +13,7 @@ More information on Joern and PHP may be found in our paper
 [Efficient and Flexible Discovery of PHP Application Vulnerabilities](https://www.infsec.cs.uni-saarland.de/~skoruppa/publications/skoruppa_eurosp2017.pdf)
 published at EuroS&P 2017.
 
-# Prerequisite: Installing the php-ast extension
+## Prerequisite: Installing the php-ast extension
 
 First off, you need a working installation of PHP 7. Next, you need to
 set up the `php-ast` extension, available at:
@@ -17,6 +24,8 @@ Essentially, clone the repository, then compile and install the
 extension as follows:
 
     git clone https://github.com/nikic/php-ast
+    cd php-ast
+    git checkout 701e853
     phpize
     ./configure
     make
@@ -24,7 +33,7 @@ extension as follows:
 	
 Lastly, add the line `extension=ast.so` to your `php.ini` file.
 
-# Using the parser
+## Using the parser
 
 The parser is implemented in PHP and makes use of the `php-ast` extension.
 A simple Bash wrapper script in the repository's root directory called
@@ -64,7 +73,7 @@ as an input format. In addition, Joern outputs code property graph edges
 only in this same format, although additional output modules should be
 easy to implement.
 
-# Generating code property graphs with Joern
+## Generating code property graphs with Joern
 
 The CSV files generated in the previous step can now be passed to Joern.
 Joern will read these files, analyze the ASTs, generate control flow
@@ -88,7 +97,7 @@ generated in the previous step, in that order. Use it as follows:
 Joern will then output a file `cpg_edges.csv`, representing the calculated
 control flow and program dependence edges.
 
-# Importing the code property graphs into Neo4J
+## Importing the code property graphs into Neo4J
 
 You should now have three CSV files, named `nodes.csv`, `rels.csv` and
 `cpg_edges.csv` by default. These files can be used to create a Neo4J
