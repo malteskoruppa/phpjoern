@@ -30,7 +30,7 @@ $startcount = 0; // the start count for numbering nodes
 function parse_arguments() {
 
   global $argv;
-  
+
   if( !isset( $argv)) {
     if( false === (boolean) ini_get( 'register_argc_argv')) {
       error_log( '[ERROR] Please enable register_argc_argv in your php.ini.');
@@ -182,7 +182,8 @@ function parse_file( $path, $exporter) : int {
   echo "Parsing file ", $finfo->getPathname(), PHP_EOL;
 
   try {
-    $ast = ast\parse_file( $path, $version = 30);
+    //new version of internal PHP AST
+    $ast = ast\parse_file( $path, $version = 70);
 
     // The above may throw a ParseError. We only export to the output
     // file(s) if that didn't happen.

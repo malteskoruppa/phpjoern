@@ -132,6 +132,7 @@ function get_flag_info() : array {
         ],
         ast\AST_ASSIGN_OP => $sharedBinaryOps + [
             // Old version 10 flags
+            /* some binary operations might not work anymore
             flags\ASSIGN_BITWISE_OR => 'ASSIGN_BITWISE_OR',
             flags\ASSIGN_BITWISE_AND => 'ASSIGN_BITWISE_AND',
             flags\ASSIGN_BITWISE_XOR => 'ASSIGN_BITWISE_XOR',
@@ -144,6 +145,7 @@ function get_flag_info() : array {
             flags\ASSIGN_POW => 'ASSIGN_POW',
             flags\ASSIGN_SHIFT_LEFT => 'ASSIGN_SHIFT_LEFT',
             flags\ASSIGN_SHIFT_RIGHT => 'ASSIGN_SHIFT_RIGHT',
+            */
         ],
         ast\AST_MAGIC_CONST => [
             flags\MAGIC_LINE => 'MAGIC_LINE',
@@ -225,7 +227,7 @@ function ast_dump($ast, int $options = 0) : string {
     } else if ($ast === null) {
         return 'null';
     } else if (is_string($ast)) {
-        return "\"$ast\""; 
+        return "\"$ast\"";
     } else {
         return (string) $ast;
     }

@@ -60,11 +60,12 @@ class CSVExporter extends Exporter {
       $this->csv_delim = "\t";
       $this->array_delim = ",";
 
-      fwrite( $this->nhandle, "id:int{$this->csv_delim}labels:label{$this->csv_delim}type{$this->csv_delim}flags:string_array{$this->csv_delim}lineno:int{$this->csv_delim}code{$this->csv_delim}childnum:int{$this->csv_delim}funcid:int{$this->csv_delim}classname{$this->csv_delim}namespace{$this->csv_delim}endlineno:int{$this->csv_delim}name{$this->csv_delim}doccomment\n");
-      fwrite( $this->rhandle, "start{$this->csv_delim}end{$this->csv_delim}type\n");
+//optional merge: this program was intended to work with Neo4j. New versions of Neo4j require updated headers in the CSV (such as :ID and so on)
+      fwrite( $this->nhandle, ":ID{$this->csv_delim}:LABEL{$this->csv_delim}type{$this->csv_delim}flags:string[]{$this->csv_delim}lineno:int{$this->csv_delim}code{$this->csv_delim}childnum:int{$this->csv_delim}funcid:int{$this->csv_delim}classname{$this->csv_delim}namespace{$this->csv_delim}endlineno:int{$this->csv_delim}name{$this->csv_delim}doccomment\n");
+      fwrite( $this->rhandle, ":START_ID{$this->csv_delim}:END_ID{$this->csv_delim}:TYPE\n");
     }
     else {
-      fwrite( $this->nhandle, "id:ID{$this->csv_delim}:LABEL{$this->csv_delim}type{$this->csv_delim}flags:string[]{$this->csv_delim}lineno:int{$this->csv_delim}code{$this->csv_delim}childnum:int{$this->csv_delim}funcid:int{$this->csv_delim}classname{$this->csv_delim}namespace{$this->csv_delim}endlineno:int{$this->csv_delim}name{$this->csv_delim}doccomment\n");
+      fwrite( $this->nhandle, ":ID{$this->csv_delim}:LABEL{$this->csv_delim}type{$this->csv_delim}flags:string[]{$this->csv_delim}lineno:int{$this->csv_delim}code{$this->csv_delim}childnum:int{$this->csv_delim}funcid:int{$this->csv_delim}classname{$this->csv_delim}namespace{$this->csv_delim}endlineno:int{$this->csv_delim}name{$this->csv_delim}doccomment\n");
       fwrite( $this->rhandle, ":START_ID{$this->csv_delim}:END_ID{$this->csv_delim}:TYPE\n");
     }
   }
@@ -126,4 +127,3 @@ class CSVExporter extends Exporter {
     return $str;
   }
 }
-
